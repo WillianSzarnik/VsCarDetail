@@ -1,9 +1,14 @@
 import React from 'react';
-import { DETAILING_PACKAGES, VITRIFICATION_PACKAGES } from '../constants';
+import { DETAILING_PACKAGES, VITRIFICATION_PACKAGES, TREATMENT_PACKAGES } from '../constants';
 import ServiceCard from './ServiceCard';
 
 const ServicesTab: React.FC = () => {
   const sortedDetailing = [...DETAILING_PACKAGES].sort((a, b) => {
+    const order = { bronze: 1, gold: 2, platinum: 3 };
+    return order[a.tier] - order[b.tier];
+  });
+
+  const sortedTreatments = [...TREATMENT_PACKAGES].sort((a, b) => {
     const order = { bronze: 1, gold: 2, platinum: 3 };
     return order[a.tier] - order[b.tier];
   });
@@ -46,9 +51,30 @@ const ServicesTab: React.FC = () => {
         </div>
       </div>
 
-      {/* SECTION 2: Vitrificação */}
+      {/* SECTION 2: Tratamentos */}
+      <div className="mb-16">
+        <div className="text-center mb-8 animate-slide-up" style={{ animationDelay: '400ms' }}>
+          <h2 className="font-display text-3xl font-black italic uppercase text-transparent bg-clip-text bg-gradient-to-r from-gray-200 to-white drop-shadow-md inline-block border-b-4 border-pink-600 pb-1 px-4 transform -skew-x-6">
+            Tratamentos
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 align-stretch">
+          {sortedTreatments.map((pkg, index) => (
+            <div 
+              key={pkg.id} 
+              className="animate-slide-up"
+              style={{ animationDelay: `${500 + (index * 100)}ms` }}
+            >
+              <ServiceCard pkg={pkg} />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* SECTION 3: Vitrificação */}
       <div>
-        <div className="text-center mb-8 animate-slide-up" style={{ animationDelay: '500ms' }}>
+        <div className="text-center mb-8 animate-slide-up" style={{ animationDelay: '800ms' }}>
           <h2 className="font-display text-3xl font-black italic uppercase text-transparent bg-clip-text bg-gradient-to-r from-gray-200 to-white drop-shadow-md inline-block border-b-4 border-blue-600 pb-1 px-4 transform -skew-x-6">
             Vitrificação
           </h2>
@@ -59,9 +85,8 @@ const ServicesTab: React.FC = () => {
             <div 
               key={pkg.id} 
               className={`animate-slide-up ${pkg.tier === 'platinum' ? 'relative z-10' : ''}`}
-              style={{ animationDelay: `${600 + (index * 100)}ms` }}
+              style={{ animationDelay: `${900 + (index * 100)}ms` }}
             >
-               {/* Wrapper to add visual prominence to High value items if needed, currently same style */}
                <ServiceCard pkg={pkg} />
             </div>
           ))}

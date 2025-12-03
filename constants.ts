@@ -13,13 +13,12 @@ export const DETAILING_PACKAGES: ServicePackage[] = [
     id: 'det-bronze',
     title: 'BRONZE',
     tier: 'bronze',
-    price: '149,99',
+    price: '129,99',
     features: [
-      'Pré-lavagem (limpeza sem toque)',
-      'Lavagem com shampoo neutro e esfregação',
-      'Limpeza interna',
-      'Limpeza de rodas',
-      'Aplicação de cera líquida',
+      'Pré-lavagem (Limpeza sem toque)',
+      'Lavagem externa (Shampoo neutro e esfregação)',
+      'Limpeza interna (Superficial)',
+      'Limpeza de rodas (Superficial)',
       'Selante nos pneus'
     ]
   },
@@ -27,12 +26,13 @@ export const DETAILING_PACKAGES: ServicePackage[] = [
     id: 'det-gold',
     title: 'GOLD',
     tier: 'gold',
-    price: '249,99',
+    price: '239,99',
     features: [
-      'Detalhamento externo completo',
-      'Detalhamento interno completo (com pincel)',
-      'Limpeza caixas de rodas',
-      'Aplicação de cera premium',
+      'Pré-lavagem (Limpeza sem toque)',
+      'Detalhamento externo (Completo)',
+      'Detalhamento interno (Completo - com pincel)',
+      'Limpeza Roéks (Caixa de rodas)',
+      'Aplicação de cera PREMIUM',
       'Selante nos pneus'
     ]
   },
@@ -40,15 +40,72 @@ export const DETAILING_PACKAGES: ServicePackage[] = [
     id: 'det-platinum',
     title: 'PLATINUM',
     tier: 'platinum',
-    price: '399,99',
+    price: '389,99',
     features: [
-      'Detalhamento externo completo',
-      'Detalhamento interno completo (com pincel)',
+      'Pré-lavagem (Limpeza sem toque)',
+      'Detalhamento externo (Completo)',
+      'Detalhamento interno (Completo - com pincel)',
+      'Limpeza Roéks (Caixa de rodas)',
       'Cristalização de para-brisa',
       'Limpeza de motor',
       'Descontaminação de vidros',
-      'Selante nos pneus',
-      'Aplicação de cera premium'
+      'Aplicação de cera PREMIUM',
+      'Selante nos pneus'
+    ]
+  }
+];
+
+export const TREATMENT_PACKAGES: ServicePackage[] = [
+  {
+    id: 'trat-interno',
+    title: 'TRATAMENTO INTERNO',
+    tier: 'bronze',
+    price: '499,99',
+    features: [
+      'Detalhamento Externo (Completo)',
+      'Detalhamento Interno (Completo - com pincel)',
+      'Higienização Interna',
+      'Descontaminação de Pintura',
+      'Limpeza de Motor (Aplicação de proteção)',
+      'Descontaminação de vidros',
+      'Cristalização de para-brisa',
+      'Aplicação de cera pastosa (6 meses)',
+      'Selante nos pneus'
+    ]
+  },
+  {
+    id: 'trat-pintura',
+    title: 'TRATAMENTO DE PINTURA',
+    tier: 'gold',
+    price: '599,99',
+    features: [
+      'Detalhamento Externo (Completo)',
+      'Detalhamento Interno (Completo - com pincel)',
+      'Descontaminação de Pintura',
+      'Polimento Técnico (Correção de pintura)',
+      'Limpeza de Motor (Aplicação de proteção)',
+      'Descontaminação de vidros',
+      'Cristalização de para-brisa',
+      'Aplicação de cera pastosa (6 meses)',
+      'Selante nos pneus'
+    ]
+  },
+  {
+    id: 'trat-completo',
+    title: 'TRATAMENTO COMPLETO',
+    tier: 'platinum',
+    price: '899,99',
+    features: [
+      'Detalhamento PREMIUM (Interno/Externo)',
+      'Detalhamento Interno (A vapor)',
+      'Higienização profunda de bancos',
+      'Higienização interna',
+      'Polimento Técnico (Correção de pintura)',
+      'Higienização de Ar-condicionado',
+      'Revitalização de plásticos',
+      'Hidratação de couro',
+      'Aplicação de proteção (1 Ano)',
+      'Selante nos pneus (Melhor do mercado)'
     ]
   }
 ];
