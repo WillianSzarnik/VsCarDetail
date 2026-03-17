@@ -1,5 +1,5 @@
 import React from 'react';
-import { DETAILING_PACKAGES, VITRIFICATION_PACKAGES, TREATMENT_PACKAGES } from '../constants';
+import { DETAILING_PACKAGES, VITRIFICATION_PACKAGES, TREATMENT_PACKAGES, EXTRA_SERVICES } from '../constants';
 import ServiceCard from './ServiceCard';
 
 const ServicesTab: React.FC = () => {
@@ -18,6 +18,11 @@ const ServicesTab: React.FC = () => {
     return order[a.tier] - order[b.tier];
   });
 
+  const sortedExtras = [...EXTRA_SERVICES].sort((a, b) => {
+    const order = { bronze: 1, gold: 2, platinum: 3 };
+    return order[a.tier] - order[b.tier];
+  });
+
   return (
     <div className="pb-24 pt-2 px-4 max-w-5xl mx-auto w-full animate-fade-in">
       
@@ -30,11 +35,11 @@ const ServicesTab: React.FC = () => {
         <div className="w-full max-w-xs h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent mt-4"></div>
       </div>
 
-      {/* SECTION 1: Detalhamento */}
+      {/* SECTION 1: Lavagem */}
       <div className="mb-16">
         <div className="text-center mb-8 animate-slide-up" style={{ animationDelay: '100ms' }}>
           <h2 className="font-display text-3xl font-black italic uppercase text-transparent bg-clip-text bg-gradient-to-r from-gray-200 to-white drop-shadow-md inline-block border-b-4 border-purple-600 pb-1 px-4 transform -skew-x-6">
-            Detalhamento
+            Lavagem
           </h2>
         </div>
 
@@ -73,7 +78,7 @@ const ServicesTab: React.FC = () => {
       </div>
 
       {/* SECTION 3: Vitrificação */}
-      <div>
+      <div className="mb-16">
         <div className="text-center mb-8 animate-slide-up" style={{ animationDelay: '800ms' }}>
           <h2 className="font-display text-3xl font-black italic uppercase text-transparent bg-clip-text bg-gradient-to-r from-gray-200 to-white drop-shadow-md inline-block border-b-4 border-blue-600 pb-1 px-4 transform -skew-x-6">
             Vitrificação
@@ -84,8 +89,29 @@ const ServicesTab: React.FC = () => {
           {sortedVitrification.map((pkg, index) => (
             <div 
               key={pkg.id} 
-              className={`animate-slide-up ${pkg.tier === 'platinum' ? 'relative z-10' : ''}`}
+              className="animate-slide-up relative z-10"
               style={{ animationDelay: `${900 + (index * 100)}ms` }}
+            >
+               <ServiceCard pkg={pkg} />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* SECTION 4: Outros Serviços */}
+      <div>
+        <div className="text-center mb-8 animate-slide-up" style={{ animationDelay: '1100ms' }}>
+          <h2 className="font-display text-3xl font-black italic uppercase text-transparent bg-clip-text bg-gradient-to-r from-gray-200 to-white drop-shadow-md inline-block border-b-4 border-emerald-600 pb-1 px-4 transform -skew-x-6">
+            Outros Serviços
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 align-stretch">
+          {sortedExtras.map((pkg, index) => (
+            <div 
+              key={pkg.id} 
+              className="animate-slide-up"
+              style={{ animationDelay: `${1200 + (index * 100)}ms` }}
             >
                <ServiceCard pkg={pkg} />
             </div>

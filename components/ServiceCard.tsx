@@ -63,8 +63,16 @@ const ServiceCard: React.FC<Props> = ({ pkg }) => {
       <div className="w-full pt-4 border-t border-white/10 text-center">
         <div className="flex items-baseline justify-center gap-1">
           <span className="text-sm font-light text-gray-400">R$</span>
-          <span className="font-display text-5xl font-bold text-white">{pkg.price.split(',')[0]}</span>
-          <span className="text-xl font-bold text-gray-400">,{pkg.price.split(',')[1]}</span>
+          {pkg.price.includes(',') ? (
+            <>
+              <span className="font-display text-5xl font-bold text-white">{pkg.price.split(',')[0]}</span>
+              <span className="text-xl font-bold text-gray-400">,{pkg.price.split(',')[1]}</span>
+            </>
+          ) : (
+            <span className={`font-display font-bold text-white ${pkg.price.length > 8 ? 'text-2xl' : 'text-4xl'}`}>
+              {pkg.price}
+            </span>
+          )}
         </div>
       </div>
     </div>

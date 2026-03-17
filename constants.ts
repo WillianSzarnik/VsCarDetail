@@ -10,28 +10,28 @@ export const CONTACT_INFO: ContactInfo = {
 
 export const DETAILING_PACKAGES: ServicePackage[] = [
   {
-    id: 'det-bronze',
-    title: 'BRONZE',
+    id: 'lav-simples',
+    title: 'LAVAGEM SIMPLES',
     tier: 'bronze',
-    price: '129,99',
+    price: '90,00',
     features: [
       'Pré-lavagem (Limpeza sem toque)',
-      'Lavagem externa (Shampoo neutro e esfregação)',
+      'Lavagem externa técnica',
       'Limpeza interna (Superficial)',
       'Limpeza de rodas (Superficial)',
       'Selante nos pneus'
     ]
   },
   {
-    id: 'det-gold',
-    title: 'GOLD',
+    id: 'lav-detalhada',
+    title: 'LAVAGEM DETALHADA',
     tier: 'gold',
-    price: '239,99',
+    price: '150,00',
     features: [
       'Pré-lavagem (Limpeza sem toque)',
       'Detalhamento externo (Completo)',
       'Detalhamento interno (Completo - com pincel)',
-      'Limpeza Roéks (Caixa de rodas)',
+      'Limpeza de rodas e caixas',
       'Aplicação de cera PREMIUM',
       'Selante nos pneus'
     ]
@@ -57,14 +57,14 @@ export const DETAILING_PACKAGES: ServicePackage[] = [
 
 export const TREATMENT_PACKAGES: ServicePackage[] = [
   {
-    id: 'trat-interno',
-    title: 'TRATAMENTO INTERNO',
+    id: 'hig-interna',
+    title: 'HIGIENIZAÇÃO INTERNA',
     tier: 'bronze',
-    price: '499,99',
+    price: '350,00',
     features: [
       'Detalhamento Externo (Completo)',
       'Detalhamento Interno (Completo - com pincel)',
-      'Higienização Interna',
+      'Higienização Interna Profunda',
       'Descontaminação de Pintura',
       'Limpeza de Motor (Aplicação de proteção)',
       'Descontaminação de vidros',
@@ -74,10 +74,10 @@ export const TREATMENT_PACKAGES: ServicePackage[] = [
     ]
   },
   {
-    id: 'trat-pintura',
-    title: 'TRATAMENTO DE PINTURA',
+    id: 'pol-completo',
+    title: 'POLIMENTO COMPLETO',
     tier: 'gold',
-    price: '599,99',
+    price: '350,00',
     features: [
       'Detalhamento Externo (Completo)',
       'Detalhamento Interno (Completo - com pincel)',
@@ -115,7 +115,7 @@ export const VITRIFICATION_PACKAGES: ServicePackage[] = [
     id: 'vit-bronze',
     title: 'VITRIFICAÇÃO BRONZE',
     tier: 'bronze',
-    price: '999,99',
+    price: '800,00',
     features: [
       'Detalhamento Externo (Completo)',
       'Detalhamento Interno (Completo - Com pincel)',
@@ -154,6 +154,54 @@ export const VITRIFICATION_PACKAGES: ServicePackage[] = [
       'Polimento Técnico (Correção de pintura)',
       'Aplicação de Vitrificador (3 Anos - Melhor do mercado)',
       'Selante nos pneus'
+    ]
+  }
+];
+
+export const EXTRA_SERVICES: ServicePackage[] = [
+  {
+    id: 'farois-pol',
+    title: 'POLIMENTO FARÓIS',
+    tier: 'bronze',
+    price: '20,00',
+    features: [
+      'Remoção de amarelado',
+      'Melhora na visibilidade noturna',
+      'Valor por unidade'
+    ]
+  },
+  {
+    id: 'farois-rest',
+    title: 'RESTAURAÇÃO FARÓIS',
+    tier: 'gold',
+    price: '65,00',
+    features: [
+      'Lixamento técnico profundo',
+      'Aplicação de verniz protetor',
+      'Acabamento original',
+      'Valor por unidade'
+    ]
+  },
+  {
+    id: 'motor-lav',
+    title: 'LAVAGEM MOTOR',
+    tier: 'bronze',
+    price: '80,00',
+    features: [
+      'Limpeza técnica do cofre',
+      'Remoção de óleos e graxas',
+      'Verniz de motor (Proteção)'
+    ]
+  },
+  {
+    id: 'motor-sujo',
+    title: 'MOTOR MUITO SUJO',
+    tier: 'gold',
+    price: '120,00',
+    features: [
+      'Limpeza profunda (Resíduos pesados)',
+      'Desengraxante técnico especial',
+      'Verniz de motor (Proteção)'
     ]
   }
 ];
